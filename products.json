@@ -1,0 +1,30 @@
+[
+    {
+        "id": "price_1IMm2pEeww0i0QVvjEWqSZmd",
+        "title": "Strawberry Croptop",
+        "description": "Be stylish",
+        "image": "/images/top.png",
+        "price": 30
+    },
+    {
+        "id": "price_1IMm4YEeww0i0QVvpz1gFli7",
+        "title": "Mom Hearts Jeans",
+        "description": "The most cool baggy jeans",
+        "image": "/images/bottom.png",
+        "price": 30
+    },
+    {
+        "id": "price_1IMm5FEeww0i0QVvUm28xWAI",
+        "title": "Summer Dress",
+        "description": "A fresh summer dress",
+        "image": "/images/dress.png",
+        "price": 30
+    },
+    {
+        "id": "price_1IMm5lEeww0i0QVvLKHqvxsH",
+        "title": "Rainbow Makeup",
+        "description": "Be colorful",
+        "image": "/images/makeup.png",
+        "price": 30
+    }
+]
