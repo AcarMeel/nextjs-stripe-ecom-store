@@ -2,10 +2,12 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 import products from "../products.json";
-import { initiateCheckouts } from "../lib/payments";
+
+import useCart from "../hooks/use-cart";
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+  const { subtotal, totalItems, addToCart, checkout } = useCart();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +17,15 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to Stylish Store</h1>
-
+        <p className={styles.description}>
+          <strong>Items</strong> {totalItems}
+          <br />
+          <strong>Total Cost</strong> ${subtotal}
+          <br />
+          <button className={styles.button} onClick={checkout}>
+            Checkout
+          </button>
+        </p>
         <ul className={styles.grid}>
           {products.map((product) => (
             <li className={styles.card} key={product.id}>
@@ -28,17 +38,10 @@ export default function Home() {
                 <button
                   className={styles.button}
                   onClick={() => {
-                    initiateCheckouts({
-                        lineItems: [
-                            {
-                                price: product.id,
-                                quantity: 1
-                            }
-                        ]
-                    });
+                    addToCart(product);
                   }}
                 >
-                  Buy Now
+                  Add to Cart
                 </button>
               </p>
             </li>
